@@ -11,9 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('weather', function (Blueprint $table) {
-            $table->id();
+        Schema::create('location', function (Blueprint $table) {
+            $table->integer('zipcode')->unsigned();
+            $table->string('City',255);
+			$table->string('Country',255);
             $table->timestamps();
+            $table->primary('zipcode');
         });
     }
 
@@ -22,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('weather');
+        Schema::dropIfExists('location');
     }
 };
