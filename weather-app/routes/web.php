@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
+/* API miatt inaktív
 Route::get('/', function () {
     return view('welcome');
-});
+});*/
