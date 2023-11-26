@@ -2,16 +2,15 @@ Időjárás API
 
 Táblák:
 	1.Időjárás_jelentés
-		-ID
-		-hol -> Időjárás_jelentés_helyszin_ID
+		-ID[PK]
+		-hol -> Időjárás_jelentés_helyszin_ID [FK]
 		-mikor
-		-ki
 		-mit
 	2.Időjárás_jelentés_helyszin
-		-ID
+		-irányítószám[PK]
 		-ország
 		-város
-		-irányítószám
+		
 	
 	
 		Create 	POST -> /weather/add
