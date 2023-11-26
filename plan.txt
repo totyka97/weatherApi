@@ -1,0 +1,20 @@
+Időjárás API
+
+Táblák:
+	1.Időjárás_jelentés
+		-ID
+		-hol -> Időjárás_jelentés_helyszin_ID
+		-mikor
+		-ki
+		-mit
+	2.Időjárás_jelentés_helyszin
+		-ID
+		-ország
+		-város
+		-irányítószám
+	
+	
+		Create 	POST -> /weather/add
+		Read	Get -> /weather/
+		Update	Put -> /weather/Update/
+		Delete	DELETE -> /weather/Delete/
