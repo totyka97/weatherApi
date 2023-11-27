@@ -1,0 +1,46 @@
+ //isset(location::select('zipcode')->where('location.zipcode','=',$request['zipcode'])->get())
+      //$van =  isset(location::select('zipcode')->where('location.zipcode','=','3397')->get() !== null );
+      $tt = location::where('zipcode','=','3397')->first();
+     //echo $tt;
+     $lekerdez =location::where('zipcode','=','2173')->first();
+     if ($lekerdez) {
+        echo "A rekord létezik";
+    } else {
+        echo "Nincs ilyen rekord";
+    }
+
+     echo isset($tt);
+     foreach ($tt as $t){
+        if(isset( $t->zipcode )){
+         
+        }else {
+         echo "nincs";
+         break;
+        }
+       }
+     
+     
+     //return $jolesz; 
+       //foreach ($jolesz as $j){
+       // echo $j->zipcode;
+      // }
+       //return weather::all(['id','zipcode','reportdate','celsius']);
+        //return location::all(['zipcode','City','Country']);
+
+
+
+        public function view(){
+        $weather = weather::with('location')->get('zipcode');
+       $test = weather::all(['id','zipcode','reportdate','celsius']);
+       
+        $zipCode = weather::where('zipcode','3397')->get(['reportdate','celsius']);
+        
+        $location= location::with('weather')->get('zipcode');
+       // return weather::all(['id','zipcode','reportdate','celsius']);
+        return (compact('zipCode'));
+
+
+    }
+
+
+
